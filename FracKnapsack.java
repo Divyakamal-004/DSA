@@ -26,21 +26,18 @@ public class FracKnapsack {
             items.add(new Item(weight[i], value[i], fraction[i]));
         }
 
-        // Sort the items by their value-to-weight ratio in descending order
         Collections.sort(items, (a, b) -> Double.compare(b.fraction, a.fraction));
 
-        // Initialize the total value and weight
+
         double totalValue = 0;
         int totalWeight = 0;
-
-        // Iterate through the items
         for (Item item : items) {
-            // If the item fits in the knapsack, add it
+
             if (totalWeight + item.weight <= cap) {
                 totalWeight += item.weight;
                 totalValue += item.value;
             } else {
-                // Otherwise, add a fraction of the item
+
                 int remainingWeight = cap - totalWeight;
                 double fractionToAdd = (double) remainingWeight / item.weight;
                 totalValue += item.value * fractionToAdd;
