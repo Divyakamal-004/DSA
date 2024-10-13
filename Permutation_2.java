@@ -13,6 +13,5 @@ public class Permutation_2 {
             String sec=p.substring(i,p.length());
             permutation(fir+ch+sec,up.substring(1));
         }
-
     }
 }

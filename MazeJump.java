@@ -7,7 +7,7 @@ public class MazeJump {
         System.out.println("destination row and column: ");
         int n = inp.nextInt();
         int m = inp.nextInt();
-        System.out.println("enter the source address");
+        System.out.println("enter the source address: ");
         int sr=inp.nextInt();
         int sc=inp.nextInt();
         ArrayList<String> paths = MazeJump(sr, sc, n, m);
