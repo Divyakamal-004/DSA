@@ -1,13 +1,13 @@
-public class Ceiling {
+public class FloorNum {
     public static void main(String[] args) {
-        //in this program we have to find the target or number which is just greater than the target in the given sorted array
-        int[] arr={-58,-46,-36,-29,-9,-5,4,7,17,45,69,88};
-        int target=68;
-        int ans=binarySearch(arr,target);
-        System.out.println(ans);
+       //in this program we have to find the number which is just smaller or equal to target in the given sorted array
+       int[] arr={-69,-50,-44,-30,-16,7,13,29,33,56};
+       int target=12;
+       int ans=binarySearch(arr,target);
+       System.out.println(ans);
     }
     static int binarySearch(int[] arr, int target){
-        if(target>arr[arr.length-1]){
+        if(target<arr[0]){
             return -1;
         }
         int start=0;
@@ -23,10 +23,10 @@ public class Ceiling {
                 start=mid+1;
             }else{
                 //target found
-                return arr[mid];
+                return mid;
             }
         }
-        //we just have to return the start as it violates while loop to get just greater number than the target
-        return arr[start];
+        //we just have to return the end as it violates while loop to get just lower number than the target
+        return arr[end];
     }
 }
